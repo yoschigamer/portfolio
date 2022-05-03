@@ -9,19 +9,19 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>portfolio</title>
+    <audio autoplay="true" src=""></audio>
 </head>
 
-
 <body>
-    <article id="switch-theme" onclick="darktheme()" style="position: absolute; top: 5%; right: 5%;">
+    <article id="switch-theme" onclick="darktheme()">
     </article>
-    <section
-        style="margin-top: 150px; border-radius: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    
+    <main style="margin-top: 150px; border-radius: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <article class="profile" style="flex-direction: column;">
-            <img style="width: 150px; height: 150px; border-radius: 100%;" draggable="false" src="./img/pp.png" alt="pp"
-                style="border-radius: 100%;">
+            <img draggable="false" src="./img/pp.png" alt="pp">
             <h1>Killian Schneider</h1>
             <p>Etudiant</p>
+
             <article style="display: flex;" class="reseaux">
                 <a draggable="false" style="text-decoration: none;" href="https://www.instagram.com/k.schdr/"
                     class="fa-brands fa-instagram fa-2x"></a>
@@ -30,6 +30,7 @@
                 <a draggable="false" style="text-decoration: none;" href="https://github.com/yoschigamer"
                     class="fa-brands fa-github  fa-2x"></a>
             </article>
+
             <article class="tempo">
                 <div>
                     <h1>+ 1</h1>
@@ -46,7 +47,7 @@
             </article>
 
             <article>
-                <button class="DLButton" style="align-items: center; justify-content: center; display: flex;">
+                <button class="DLButton">
                     <a style="color: #e0e0e0;" href="./kIllian_schneider_CV.png">Download CV</a></a><i style="position: relative; left: 10px;"
                         class="fa-solid fa-download fa-2x"></i></button>
                 <a href="mailto:killianschneider577@gmail.com" style="background-color: #e0e0e0;" class="MailButton"><i
@@ -54,31 +55,32 @@
                 </a>
             </article>
 
-            <section>
-                <nav class="switch">
-                    <div onclick="left()">Work Time</div>
-                    <div onclick="right()">skills</div>
-                </nav>
-                <nav style="position: absolute;">
+            <nav>
+                <ul class="switch">
+                    <li onclick="left()">Work Time</div>
+                    <li onclick="right()">skills</div>
+                </ul>
+                <div style="position: absolute;">
                     <div id="switch"></div>
-                </nav>
-            </section>
+                </div>
+            </nav>
             <article id="contaigner-stat">
-                <a href="https://wakatime.com"><img
-                        src="https://wakatime.com/share/@Yoschigamer/0c2bed4e-af73-4b79-a0b5-0e7b9e00c63d.png" /></a>
-                <a href="https://wakatime.com"><img
-                        src="https://wakatime.com/share/@Yoschigamer/839bda89-8f52-4105-a3b8-065693d63b6f.png" /></a>
+                <a href="https://wakatime.com">
+                    <img src="https://wakatime.com/share/@Yoschigamer/0c2bed4e-af73-4b79-a0b5-0e7b9e00c63d.png" /></a>
+                <a href="https://wakatime.com">
+                    <img src="https://wakatime.com/share/@Yoschigamer/839bda89-8f52-4105-a3b8-065693d63b6f.png" /></a>
             </article>
         </article>
-        <section style="display: flex; flex-direction: column;">
+        <hr>
+        <footer style="display: flex; flex-direction: column;">
             <h1>
                 A propos de moi 
             </h1>
             <p style="width: 400px">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam ducimus consequuntur quod praesentium totam, aliquid, consequatur modi rerum iure, suscipit sit fugiat voluptatibus. Facere culpa doloremque aut tenetur quae explicabo.
             </p>
-        </section>
-    </section>
+        </footer>
+    </main>
 </body>
 
 </html>
@@ -106,8 +108,19 @@
         background-color: #f1f1f1;
     }
 
+    #switch-theme {
+        position: absolute;
+        top: 5%; 
+        right: 5%;
+    }
+
     a {
         text-decoration: none;
+    }
+
+    hr {
+        margin-top: 50px;
+        border: 3px solid rgba(0, 153, 255, 0.445); width: 100px; border-radius: 100px;
     }
 
     p {
@@ -125,9 +138,12 @@
         margin: 5px;
     }
 
-    article.profile>img {
+    .profile>img {
         border: 5px solid rgb(0, 123, 255);
         padding: 5px;
+        width: 150px; 
+        height: 150px; 
+        border-radius: 100%;
     }
 
     .switch {
@@ -138,9 +154,12 @@
         background-color: rgb(224, 224, 224);
         display: flex;
         align-items: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
     }
 
-    .switch>div {
+    .switch>li {
         transition: all 0.2s;
         width: 50%;
         height: 100%;
@@ -151,7 +170,7 @@
     #switch {
         transition: all 0.3s ease;
         left: 3px;
-        width: 140px;
+        width: 135px;
         top: -67px;
         height: 64px;
         background: black;
@@ -161,16 +180,16 @@
 
     #contaigner-stat {
         width: 310px;
-        height: 310px;
+        height: 270px;
         position: relative;
     }
 
-    article#contaigner-stat>* {
+    #contaigner-stat>* {
         transition: all 0.5s ease;
         position: absolute;
     }
 
-    article#contaigner-stat>*>* {
+    #contaigner-stat>*>* {
         width: 310px;
         margin-top: 20px;
     }
@@ -196,7 +215,11 @@
         transition: all 0.3s;
     }
 
-    button.DLButton {
+    .DLButton {
+        font-weight: 900;
+        align-items: center; 
+        justify-content: center; 
+        display: flex;
         color: white;
         width: 160px;
         height: 60px;
@@ -218,18 +241,18 @@
         border: none;
     }
 
-    article.tempo>div {
+    .tempo>div {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 110px;
     }
 
-    article.tempo>div>* {
+    .tempo>div>* {
         margin: 5px;
     }
 
-    article.profile>h1:nth-child(2) {
+    .profile>h1:nth-child(2) {
         font-family: 'Caveat', cursive;
         font-size: 1.5em;
         font-weight: 900;
@@ -237,7 +260,6 @@
 </style>
 
 <script>
-    darktheme()
     function darktheme() {
         if (document.body.style.backgroundColor == "rgb(241, 241, 241)") {
             document.body.style.backgroundColor = "rgb(11 20 47)";
@@ -267,7 +289,6 @@
         }
 
     }
-    left()
 
     function left() {
         document.querySelector("#switch").style.left = "2%";
@@ -278,14 +299,13 @@
 
     }
     function right() {
-        document.querySelector("#switch").style.left = "98%";
+        document.querySelector("#switch").style.left = "105.5%";
         document.querySelector('#contaigner-stat').children[0].style.opacity = "1"
         document.querySelector('#contaigner-stat').children[1].style.opacity = "0"
         document.querySelector('.switch').children[1].style.color = "rgb(7 80 167)"
         document.querySelector('.switch').children[0].style.color = "grey"
     }
 
-
-
-
+darktheme()
+left()
 </script>
