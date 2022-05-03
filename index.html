@@ -16,7 +16,7 @@
     <article id="switch-theme" onclick="darktheme()" style="position: absolute; top: 5%; right: 5%;">
     </article>
     <section
-        style="width: 500px; height: 500px; border-radius: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        style="margin-top: 150px; border-radius: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <article class="profile" style="flex-direction: column;">
             <img style="width: 150px; height: 150px; border-radius: 100%;" draggable="false" src="./img/pp.png" alt="pp"
                 style="border-radius: 100%;">
@@ -44,18 +44,24 @@
                     <p>Gaming<br>&<br>Sport</p>
                 </div>
             </article>
+
             <article>
                 <button class="DLButton" style="align-items: center; justify-content: center; display: flex;">
-                    <a style="color: #e0e0e0;" href="/kIllian_schneider_CV.png">Download CV</a></a><i style="position: relative; left: 10px;"
+                    <a style="color: #e0e0e0;" href="./kIllian_schneider_CV.png">Download CV</a></a><i style="position: relative; left: 10px;"
                         class="fa-solid fa-download fa-2x"></i></button>
                 <button style="background-color: #e0e0e0;" class="MailButton"><i
                         class="fa-solid fa-at fa-2x"></i></button>
             </article>
-            <article class="switch">
-                <div onclick="left()" style="left: 16px; position: relative;">Work Time</div>
-                <div onclick="right()" style="left: 102px; position: relative;">skills</div>
-                <div id="switch"></div>
-            </article>
+
+            <section>
+                <nav class="switch">
+                    <div onclick="left()">Work Time</div>
+                    <div onclick="right()">skills</div>
+                </nav>
+                <nav style="position: absolute;">
+                    <div id="switch"></div>
+                </nav>
+            </section>
             <article id="contaigner-stat">
                 <a href="https://wakatime.com"><img
                         src="https://wakatime.com/share/@Yoschigamer/0c2bed4e-af73-4b79-a0b5-0e7b9e00c63d.png" /></a>
@@ -63,6 +69,14 @@
                         src="https://wakatime.com/share/@Yoschigamer/839bda89-8f52-4105-a3b8-065693d63b6f.png" /></a>
             </article>
         </article>
+        <section style="display: flex; flex-direction: column;">
+            <h1>
+                A propos de moi 
+            </h1>
+            <p style="width: 400px">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam ducimus consequuntur quod praesentium totam, aliquid, consequatur modi rerum iure, suscipit sit fugiat voluptatibus. Facere culpa doloremque aut tenetur quae explicabo.
+            </p>
+        </section>
     </section>
 </body>
 
@@ -74,12 +88,21 @@
 
     * {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+
     }
 
-    article.profile>h1:nth-child(2) {
-        font-family: 'Caveat', cursive;
-        font-size: 1.5em;
-        font-weight: 900;
+    body,
+    html {
+        transition: all 0.2s;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f1f1f1;
     }
 
     a {
@@ -91,17 +114,14 @@
         font-weight: 600;
     }
 
-    body,
-    html {
-        transition: all 0.2s;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+    article {
         display: flex;
-        height: 140%;
-        justify-content: center;
         align-items: center;
-        background-color: #f1f1f1;
+        justify-content: center;
+    }
+
+    article>* {
+        margin: 5px;
     }
 
     article.profile>img {
@@ -109,25 +129,44 @@
         padding: 5px;
     }
 
-    article.switch {
+    .switch {
 
         width: 280px;
         height: 70px;
-        border-radius: 15px;
+        border-radius: 17px;
         background-color: rgb(224, 224, 224);
         display: flex;
         align-items: center;
     }
 
-    article.switch>* {
+    .switch>div {
         transition: all 0.2s;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #switch {
+        transition: all 0.3s ease;
+        left: 3px;
+        width: 140px;
+        top: -67px;
+        height: 64px;
+        background: black;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    #contaigner-stat {
+        width: 310px;
+        height: 310px;
+        position: relative;
     }
 
     article#contaigner-stat>* {
         transition: all 0.5s ease;
         position: absolute;
-        top: 750px;
-        left: clac(50%-200px);
     }
 
     article#contaigner-stat>*>* {
@@ -135,15 +174,15 @@
         margin-top: 20px;
     }
 
-    article.switch :nth-child(1),
-    article.switch :nth-child(2) {
+    .switch :nth-child(1),
+    .switch :nth-child(2) {
         cursor: pointer;
         color: rgb(0, 0, 0);
         z-index: 2;
         margin: 0;
     }
 
-    article.switch> :nth-child(3) {
+    .switch> :nth-child(3) {
         width: 130px;
         position: relative;
         height: 60px;
@@ -175,18 +214,7 @@
         border: none;
     }
 
-    article {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    article>* {
-        margin: 5px;
-    }
-
     article.tempo>div {
-        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -195,6 +223,12 @@
 
     article.tempo>div>* {
         margin: 5px;
+    }
+
+    article.profile>h1:nth-child(2) {
+        font-family: 'Caveat', cursive;
+        font-size: 1.5em;
+        font-weight: 900;
     }
 </style>
 
@@ -232,7 +266,7 @@
     left()
 
     function left() {
-        document.querySelector("#switch").style.left = "-124px";
+        document.querySelector("#switch").style.left = "2%";
         document.querySelector('#contaigner-stat').children[0].style.opacity = "0"
         document.querySelector('#contaigner-stat').children[1].style.opacity = "1"
         document.querySelector('.switch').children[0].style.color = "rgb(7 80 167)"
@@ -240,7 +274,7 @@
 
     }
     function right() {
-        document.querySelector("#switch").style.left = "15px";
+        document.querySelector("#switch").style.left = "98%";
         document.querySelector('#contaigner-stat').children[0].style.opacity = "1"
         document.querySelector('#contaigner-stat').children[1].style.opacity = "0"
         document.querySelector('.switch').children[1].style.color = "rgb(7 80 167)"
